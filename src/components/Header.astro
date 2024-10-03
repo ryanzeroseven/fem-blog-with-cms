@@ -1,6 +1,31 @@
 <header>
   <h1 class="'visually-hidden">The W.</h1>
   <a href="/" class="logo">
-    <img src="" alt="" />
+    <img src="/public/images/logo.svg" alt="" />
   </a>
+
+  <nav>
+    <ul>
+      <li><a href="/">homepage</a></li>
+      <li><a href="#">New</a></li>
+      <li><a href="#">Popular</a></li>
+      <li><a href="#">Trending</a></li>
+      <li><a href="#">Categories</a></li>
+    </ul>
+  </nav>
 </header>
+
+<style>
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    gap: 1rem;
+  }
+</style>
