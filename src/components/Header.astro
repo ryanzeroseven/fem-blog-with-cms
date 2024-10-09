@@ -1,7 +1,7 @@
 <header>
-  <h1 class="'visually-hidden">The W.</h1>
+  <h1 class="visually-hidden">The W.</h1>
   <a href="/" class="logo">
-    <img src="/public/images/logo.svg" alt="" />
+    <img src="/images/logo.svg" alt="" />
   </a>
 
   <nav>
@@ -19,7 +19,9 @@
   header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
+
   ul {
     list-style: none;
     margin: 0;
@@ -27,5 +29,14 @@
 
     display: flex;
     gap: 1rem;
+  }
+
+  a {
+    text-decoration: none;
+    color: currentColor;
+    &:hover,
+    &:focus-visible {
+      color: var(--clr-accent-400);
+    }
   }
 </style>
