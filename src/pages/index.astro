@@ -1,11 +1,23 @@
 ---
 import PrimaryLayout from '../layouts/PrimaryLayout.astro';
 import FeaturedArticle from '../components/FeaturedArticle.astro';
+import PopularArticles from '../components/PopularArticles.astro';
 const title = 'FEM Blog with CMS';
 ---
 
 <PrimaryLayout title="homepage">
-  <FeaturedArticle />
+  <div class="three-columns section">
+    <FeaturedArticle class="span-2" />
+    <div class="inverted">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis minima,
+      pariatur ex molestias cumque inventore mollitia sequi quaerat aspernatur
+      nisi quod iste praesentium, maiores odio. Ratione, nobis optio.
+      Reiciendis, id!
+    </div>
+  </div>
+
+  <PopularArticles class="three-columns section" />
+
   <!-- three-cols -->
   <!-- Featured article -->
   <!-- three-cols -->
