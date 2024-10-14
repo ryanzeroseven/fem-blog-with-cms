@@ -91,6 +91,7 @@ body {
   color: var(--clr-body);
   font-family: var(--ff-base);
   line-height: 1.6;
+  overflow: clip;
 }
 
 main,
