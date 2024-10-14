@@ -1,3 +1,17 @@
+<script>
+  const navToggle = document.querySelector('[aria-controls="primary-nav"]');
+
+  navToggle.addEventListener('click', () => {
+    const navOpened = navToggle.getAttribute('aria-expanded');
+
+    navOpened === 'false'
+      ? navToggle.setAttribute('aria-expanded', 'true')
+      : navToggle.setAttribute('aria-expanded', 'false');
+
+    console.log(navOpened);
+  });
+</script>
+
 <header>
   <a href="#main-content" class="skip-to-main">Skip to main content</a>
 
@@ -6,7 +20,13 @@
     <img src="/images/logo.svg" alt="" />
   </a>
 
-  <nav>
+  <button aria-controls="primary-nav" aria-expanded="false">
+    <span class="visually-hidden">Menu</span>
+    <img class="icon-hamburger" src="/images/icon-menu.svg" alt="" />
+    <img class="icon-close" src="/images/icon-menu-close.svg" alt="" />
+  </button>
+
+  <nav id="primary-nav">
     <ul>
       <li><a href="/">homepage</a></li>
       <li><a href="#">New</a></li>
@@ -41,6 +61,67 @@
     &:hover,
     &:focus-visible {
       color: var(--clr-accent-400);
+    }
+  }
+
+  button {
+    display: none;
+    .icon-close {
+      display: none;
+    }
+  }
+
+  @media (width < 750px) {
+    button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      position: absolute;
+      z-index: 10;
+      right: 1rem;
+      padding: 1rem;
+      border: none;
+      background: transparent;
+    }
+    nav {
+      display: none;
+    }
+    [aria-expanded='true'] {
+      .icon-close {
+        display: block;
+      }
+      .icon-hamburger {
+        display: none;
+      }
+    }
+    [aria-expanded='true'] + nav {
+      display: block;
+      position: absolute;
+      inset: 0;
+      width: 80%;
+      margin-left: auto;
+
+      z-index: 1;
+      background-color: var(--clr-neutral-100);
+      box-shadow: 0 0 0 100vmax hsl(0 0 0 / 0.2);
+    }
+
+    ul {
+      margin-top: 20vh;
+      margin-left: 3rem;
+      display: grid;
+      gap: 2rem;
+      font-size: var(--fs-600);
+    }
+
+    a {
+      color: var(--clr-neutral-900);
+
+      &:hover,
+      &:focus-visible {
+        color: var(--clr-accent-400);
+      }
     }
   }
 

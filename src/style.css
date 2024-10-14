@@ -94,9 +94,7 @@ body {
 }
 
 main,
-section,
-header,
-footer {
+section {
   container-type: inline-size;
 }
 
