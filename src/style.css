@@ -38,6 +38,7 @@
 *::after,
 *::before {
   box-sizing: border-box;
+  outline-color: var(--clr-neutral-900);
 }
 
 h1,
